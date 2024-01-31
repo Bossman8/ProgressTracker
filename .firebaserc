@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "kanbanfire-db7fd": {
+      "hosting": {
+        "kanban-fire": [
+          "kanbanfire-db7fd"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "kanbanfire-db7fd"
+  }
+}

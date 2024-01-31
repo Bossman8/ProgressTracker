@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>{{ data.task.id ? 'Update' : 'Create' }} Task</h2>
+<div class="dialog-body">
+  <mat-form-field class="form-field">
+    <mat-label>Title</mat-label>
+    <input matInput cdkFocusInitial [(ngModel)]="data.task.title" />
+  </mat-form-field>
+  
+  <mat-form-field class="form-field">
+    <mat-label>Type</mat-label>
+    <mat-select [(ngModel)]="data.task.type">
+      <mat-option value="">--</mat-option>
+      <mat-option *ngFor="let type of TaskTypeLabelMapping | keyvalue" [value]="type.key">{{type.value}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <mat-form-field class="form-field">
+    <mat-label>Description</mat-label>
+    <textarea matInput [(ngModel)]="data.task.description"></textarea>
+  </mat-form-field>
+  
+  <div style="margin-left: 16px; width: 25%;">
+    <p>Blocked</p>
+    <mat-slide-toggle color="primary" [(ngModel)]="data.task.blocked"></mat-slide-toggle>
+  </div>
+  
+  <div mat-dialog-actions class="action-buttons">
+    <button mat-button [mat-dialog-close]="{ task: data.task }">OK</button>
+    <button mat-button (click)="cancel()">Cancel</button>
+    <button
+      *ngIf="data.enableDelete"
+      mat-button
+      color="warn"
+      aria-label="Delete"
+      [mat-dialog-close]="{ task: data.task, delete: true }">
+      Delete
+    </button>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+:host {
+    display: block;
+  }
+  
+.item {
+  margin: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.userStory {
+  color: rgb(39, 171, 233);
+}
+
+.task {
+  color: rgb(231, 56, 56)
+}
+
+.epic {
+  color: rgb(241, 175, 32)
+}
+
+.feature {
+  color: rgb(40, 199, 40)
+}
+
+.blocked {
+  background-color: rgb(241, 88, 88);
+}
